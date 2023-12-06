@@ -5,5 +5,5 @@
 - **useStae**
 - **useState-obj**
 - **useState-array**
-- **usState-props**
+- **usState-props** : how pass state as props
 
