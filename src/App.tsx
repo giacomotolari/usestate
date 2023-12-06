@@ -1,16 +1,17 @@
-import { useState } from "react";
 import "./App.css";
+import { useState } from "react";
+import CounterBtn from "./components/CounterBtn";
+
+
+// Pass the setCount function as a prop to the CounterBtn component.
+// In the CounterBtn component, use the setCount function to update the count state.
 
 function App() {
-  const [count, setCount] = useState(10);
-
-  const increment = () => {
-    setCount((count) => count + 1);
-  };
-
+  const [count, setCount] = useState(0);
   return (
     <>
-      <button onClick={increment}>count is {count}</button>
+      <p>count is {count}</p>
+      <CounterBtn setCount={setCount}/>
     </>
   );
 }
