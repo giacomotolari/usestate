@@ -1,17 +1,36 @@
 import "./App.css";
 import { useState } from "react";
 
-function App() {
-  const [numbers, setNumbers] = useState([1, 2, 3, 4, 5]);
+interface Person {
+  firstName: string;
+  age: number;
+  city?: string;
+}
 
-  const handleNumbers = () => {
-    setNumbers((prevNumbers) => [...prevNumbers, 6])
-  }
+function App() {
+  const [person, setPerson] = useState<Person>({
+    firstName: "John",
+    age: 20,
+    city: "hamburg",
+  });
+
+  const handlePersonAge = () => {
+    // copy if person obj and update the age key
+    setPerson((prevPerson) => {
+      const newPerson = {
+        ...prevPerson,
+        age: prevPerson.age + 1,
+      };
+      return newPerson;
+    });
+  };
 
   return (
     <>
-      <p>count is {numbers}</p>
-      <button onClick={handleNumbers}>update numbers</button>
+      <p>firstName: {person.firstName}</p>
+      <p>age: {person.age}</p>
+      <p>city: {person.city}</p>
+      <button onClick={handlePersonAge}>update person</button>
     </>
   );
 }
