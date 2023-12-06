@@ -2,23 +2,15 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(10);
 
-  // const increment = () => {
-  //   setCount((count) => count + 1);
-  //   setCount((count) => count + 1);
-  // };
-
-  // const increment = () => {
-  //   setCount(count + 1);
-  //   setCount(count + 1);
-  // };
+  const increment = () => {
+    setCount((count) => count + 1);
+  };
 
   return (
     <>
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
+      <button onClick={increment}>count is {count}</button>
     </>
   );
 }
