@@ -3,7 +3,7 @@
 ## Branches:
 
 - **useStae**
-- **usState-prev**
 - **useState-obj**
 - **useState-array**
+- **usState-props**
 
